@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  <icon>http://example.com/icon.png</icon>
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-09-28T18:40:26.479Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装VMware,主机键盘不能用解决方法</title>
+    <link href="http://example.com/2021/09/29/%E5%AE%89%E8%A3%85VMware-%E4%B8%BB%E6%9C%BA%E9%94%AE%E7%9B%98%E4%B8%8D%E8%83%BD%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://example.com/2021/09/29/%E5%AE%89%E8%A3%85VMware-%E4%B8%BB%E6%9C%BA%E9%94%AE%E7%9B%98%E4%B8%8D%E8%83%BD%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <published>2021-09-28T18:39:00.000Z</published>
+    <updated>2021-09-28T18:40:26.479Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;不是第一次出现这个问题了，记录一下&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;右键电脑-属性-硬件-设备管理器，键盘那一项显示黄色叹号，属性显示为 由于其配置信息（注册表中的）不完整或已损坏，Windows</summary>
+        
+      
+    
+    
+    
+    
+    <category term="VMware" scheme="http://example.com/tags/VMware/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2021/09/28/hello-world/"/>
+    <id>http://example.com/2021/09/28/hello-world/</id>
+    <published>2021-09-28T15:28:00.000Z</published>
+    <updated>2021-09-28T16:27:59.769Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Quick-Start-sdfskdf&quot;&gt;&lt;a href=&quot;#Quick-Start-sdfskdf&quot; class=&quot;headerlink&quot; title=&quot;Quick Start sdfskdf&quot;&gt;&lt;/a&gt;Quick Start sdfskdf&lt;/h2&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>

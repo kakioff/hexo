@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/09/28/hello-world/</url>
+    <content><![CDATA[<h2 id="Quick-Start-sdfskdf"><a href="#Quick-Start-sdfskdf" class="headerlink" title="Quick Start sdfskdf"></a>Quick Start sdfskdf</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>安装VMware,主机键盘不能用解决方法</title>
+    <url>/2021/09/29/%E5%AE%89%E8%A3%85VMware-%E4%B8%BB%E6%9C%BA%E9%94%AE%E7%9B%98%E4%B8%8D%E8%83%BD%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<blockquote>
+<p>不是第一次出现这个问题了，记录一下</p>
+</blockquote>
+<p>右键电脑-属性-硬件-设备管理器，键盘那一项显示黄色叹号，属性显示为 由于其配置信息（注册表中的）不完整或已损坏，Windows 无法启动这个硬件设备</p>
+<p>VMware安装以后会在C盘<code>program files</code>文件夹下生成<code>VMware</code>文件夹，卸载以后这个文件夹并不会消失掉,删掉这个文件夹系统会提示有文件受保护或正在运行，无法删除，强制或者修复VMware以后，再次开机键盘不能用了，但是外接usb键盘也不能用</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><blockquote>
+<p>win10右键状态栏可开启 触摸键盘按钮 ，可正常打字</p>
+</blockquote>
+<ol>
+<li>右键开始，点击运行<code>regedit.exe</code>，进入注册表编辑器 到左边的项目栏里定位到 定位到 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}</code> 这一项</li>
+<li>注册表里面<code>UpperFilters</code>这一项，右键它修改，把内容改成<code>kbdclass</code>，点确定，没有<code>UpperFilters</code>这一项的话在注册表空白处右键添加字符串名字<code>UpperFilters</code>项，内容写成<code>kbdclass</code></li>
+<li>然后再右键我的 电脑→属性→硬件→设备管理器→键盘 全部右键卸载</li>
+<li>然后再空白处右键点扫描检测硬件改动，等两秒钟，你会发现键盘可以用了，笔记本的话触摸板现在还不能用，现在重启电脑就可以了</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>VMware</tag>
+      </tags>
+  </entry>
+</search>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
-  <icon>http://example.com/icon.png</icon>
+  <title>xian的blog</title>
+  <icon>https://www.byxian.top/icon.png</icon>
+  <subtitle>byxian的博客网站</subtitle>
+  <link href="https://www.byxian.top/atom.xml" rel="self"/>
   
-  <link href="http://example.com/atom.xml" rel="self"/>
-  
-  <link href="http://example.com/"/>
+  <link href="https://www.byxian.top/"/>
   <updated>2021-09-28T18:40:26.479Z</updated>
-  <id>http://example.com/</id>
+  <id>https://www.byxian.top/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>byxian</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>安装VMware,主机键盘不能用解决方法</title>
-    <link href="http://example.com/2021/09/29/%E5%AE%89%E8%A3%85VMware-%E4%B8%BB%E6%9C%BA%E9%94%AE%E7%9B%98%E4%B8%8D%E8%83%BD%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>http://example.com/2021/09/29/%E5%AE%89%E8%A3%85VMware-%E4%B8%BB%E6%9C%BA%E9%94%AE%E7%9B%98%E4%B8%8D%E8%83%BD%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <link href="https://www.byxian.top/2021/09/29/%E5%AE%89%E8%A3%85VMware-%E4%B8%BB%E6%9C%BA%E9%94%AE%E7%9B%98%E4%B8%8D%E8%83%BD%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>https://www.byxian.top/2021/09/29/%E5%AE%89%E8%A3%85VMware-%E4%B8%BB%E6%9C%BA%E9%94%AE%E7%9B%98%E4%B8%8D%E8%83%BD%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
     <published>2021-09-28T18:39:00.000Z</published>
     <updated>2021-09-28T18:40:26.479Z</updated>
     
@@ -38,14 +38,14 @@
     
     
     
-    <category term="VMware" scheme="http://example.com/tags/VMware/"/>
+    <category term="VMware" scheme="https://www.byxian.top/tags/VMware/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2021/09/28/hello-world/"/>
-    <id>http://example.com/2021/09/28/hello-world/</id>
+    <link href="https://www.byxian.top/2021/09/28/hello-world/"/>
+    <id>https://www.byxian.top/2021/09/28/hello-world/</id>
     <published>2021-09-28T15:28:00.000Z</published>
     <updated>2021-09-28T16:27:59.769Z</updated>
     

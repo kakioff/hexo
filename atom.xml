@@ -6,7 +6,7 @@
   <link href="https://www.byxian.top/atom.xml" rel="self"/>
   
   <link href="https://www.byxian.top/"/>
-  <updated>2021-09-29T04:42:26.477Z</updated>
+  <updated>2021-09-29T14:06:05.848Z</updated>
   <id>https://www.byxian.top/</id>
   
   <author>
@@ -21,14 +21,15 @@
     <link href="https://www.byxian.top/2021/09/29/vue-cdn/"/>
     <id>https://www.byxian.top/2021/09/29/vue-cdn/</id>
     <published>2021-09-29T04:39:00.000Z</published>
-    <updated>2021-09-29T04:42:26.477Z</updated>
+    <updated>2021-09-29T14:06:05.848Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;pre&gt;&lt;code&gt;    我在vue网站中使用了[vaptcha](https://www.vaptcha.com/)的验证码，在`index.html`中引入了CDN后使用的时候出现了`vaptcha is not</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;我在vue网站中使用了&lt;a class=&quot;link&quot; href=&quot;https://www.vaptcha.com/&quot;&gt;vaptcha&lt;i class=&quot;fas</summary>
         
       
     
@@ -90,7 +91,7 @@
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;一般网站使用的锚点定位都是使用的a标签，但是实际使用的时候会很生硬&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;使用&lt;a</summary>
+&lt;p&gt;使用&lt;a class=&quot;link&quot;</summary>
         
       
     

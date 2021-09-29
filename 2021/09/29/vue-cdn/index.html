@@ -20,16 +20,21 @@
     var CONFIG = {"hostname":"www.byxian.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="xian的blog">
-<meta property="og:url" content="https://www.byxian.top/archives/2021/09/index.html">
+  <meta name="description" content="我在vue网站中使用了[vaptcha](https:&#x2F;&#x2F;www.vaptcha.com&#x2F;)的验证码，在&#96;index.html&#96;中引入了CDN后使用的时候出现了&#96;vaptcha is not defined&#96;试了很多别的方法引入都没用  如何解决 先正常引入js文件，index.html的script标签或者什么的。  在webpack.base.conf.js中进行配置 123exter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue引入外部cdn报错 ‘XXX is not defined’">
+<meta property="og:url" content="https://www.byxian.top/2021/09/29/vue-cdn/index.html">
 <meta property="og:site_name" content="xian的blog">
+<meta property="og:description" content="我在vue网站中使用了[vaptcha](https:&#x2F;&#x2F;www.vaptcha.com&#x2F;)的验证码，在&#96;index.html&#96;中引入了CDN后使用的时候出现了&#96;vaptcha is not defined&#96;试了很多别的方法引入都没用  如何解决 先正常引入js文件，index.html的script标签或者什么的。  在webpack.base.conf.js中进行配置 123exter">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-29T04:39:00.000Z">
+<meta property="article:modified_time" content="2021-09-29T04:42:26.477Z">
 <meta property="article:author" content="byxian">
-<meta property="article:tag" content="xian的blog, xian, byxian, 博客">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="cdn">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.byxian.top/archives/2021/09/">
+<link rel="canonical" href="https://www.byxian.top/2021/09/29/vue-cdn/">
 
 
 <script id="page-configurations">
@@ -37,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | xian的blog</title>
+  <title>vue引入外部cdn报错 ‘XXX is not defined’ | xian的blog</title>
   
 
 
@@ -177,130 +182,138 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 5 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.byxian.top/2021/09/29/vue-cdn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/XIAN1.png">
+      <meta itemprop="name" content="byxian">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xian的blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vue引入外部cdn报错 ‘XXX is not defined’
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-09-29 12:39:00 / 修改时间：12:42:26" itemprop="dateCreated datePublished" datetime="2021-09-29T12:39:00+08:00">2021-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <pre><code>    我在vue网站中使用了[vaptcha](https://www.vaptcha.com/)的验证码，在`index.html`中引入了CDN后使用的时候出现了`vaptcha is not defined`试了很多别的方法引入都没用
+</code></pre>
+<h2 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h2><ol>
+<li><p>先正常引入js文件，index.html的script标签或者什么的。</p>
+</li>
+<li><p>在webpack.base.conf.js中进行配置</p>
+<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">externals: {</span><br><span class="line">	vaptcha: 'vaptcha'</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>但是vue-cli3要在vue.config.js中配置，要是没有就新建一个文件</p>
+<p>&nbsp; </p><figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> &nbsp; configureWebpack: {</span><br><span class="line">    externals: {</span><br><span class="line">  		'vaptcha: 'vaptcha'</span><br><span class="line"> 	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+</li>
+</ol>
+<p>使用的时候直接在vue文件中引入就好了</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> vaptcha <span class="keyword">from</span> <span class="string">"vaptcha"</span></span><br></pre></td></tr></tbody></table></figure>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-09-29T12:39:00+08:00"
-              content="2021-09-29">
-          09-29
-        </time>
-      </div>
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/09/29/vue-cdn/" itemprop="url">
-            <span itemprop="name">vue引入外部cdn报错 ‘XXX is not defined’</span>
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/byxian">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-09-29T12:37:00+08:00"
-              content="2021-09-29">
-          09-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/09/29/vue-history/" itemprop="url">
-            <span itemprop="name">Vue切换路由模式，去掉链接后面的#</span>
+            <span class="label">RSS</span>
           </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-09-29T11:48:00+08:00"
-              content="2021-09-29">
-          09-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/09/29/scrollIntoView/" itemprop="url">
-            <span itemprop="name">锚点定位scrollIntoView平滑过渡</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-09-29T11:26:00+08:00"
-              content="2021-09-29">
-          09-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/09/29/layui-tree/" itemprop="url">
-            <span itemprop="name">踩坑layui的tree组件-树形组件</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-09-29T02:39:00+08:00"
-              content="2021-09-29">
-          09-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/09/29/vmware-kbd/" itemprop="url">
-            <span itemprop="name">安装VMware,主机键盘不能用解决方法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/vue/" rel="tag"># vue</a>
+              <a href="/tags/cdn/" rel="tag"># cdn</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/29/vue-history/" rel="prev" title="Vue切换路由模式，去掉链接后面的#">
+      <i class="fa fa-chevron-left"></i> Vue切换路由模式，去掉链接后面的#
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -353,6 +366,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3"><span class="nav-number">1.</span> <span class="nav-text">如何解决</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

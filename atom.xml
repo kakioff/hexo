@@ -6,7 +6,7 @@
   <link href="https://www.byxian.top/atom.xml" rel="self"/>
   
   <link href="https://www.byxian.top/"/>
-  <updated>2021-09-28T18:40:26.479Z</updated>
+  <updated>2021-09-29T04:42:26.477Z</updated>
   <id>https://www.byxian.top/</id>
   
   <author>
@@ -17,11 +17,127 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>vue引入外部cdn报错 ‘XXX is not defined’</title>
+    <link href="https://www.byxian.top/2021/09/29/vue-cdn/"/>
+    <id>https://www.byxian.top/2021/09/29/vue-cdn/</id>
+    <published>2021-09-29T04:39:00.000Z</published>
+    <updated>2021-09-29T04:42:26.477Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre&gt;&lt;code&gt;    我在vue网站中使用了[vaptcha](https://www.vaptcha.com/)的验证码，在`index.html`中引入了CDN后使用的时候出现了`vaptcha is not</summary>
+        
+      
+    
+    
+    
+    <category term="vue" scheme="https://www.byxian.top/categories/vue/"/>
+    
+    
+    <category term="vue" scheme="https://www.byxian.top/tags/vue/"/>
+    
+    <category term="cdn" scheme="https://www.byxian.top/tags/cdn/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue切换路由模式，去掉链接后面的#</title>
+    <link href="https://www.byxian.top/2021/09/29/vue-history/"/>
+    <id>https://www.byxian.top/2021/09/29/vue-history/</id>
+    <published>2021-09-29T04:37:00.000Z</published>
+    <updated>2021-09-29T04:38:21.873Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;最近开发一个Vue项目，但是链接后面一直显示一个#，显得很不美观 只需要将&lt;code&gt;vue-router&lt;/code&gt;的模式换成&lt;code&gt;history&lt;/code&gt;就行了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure</summary>
+        
+      
+    
+    
+    
+    <category term="vue" scheme="https://www.byxian.top/categories/vue/"/>
+    
+    
+    <category term="vue" scheme="https://www.byxian.top/tags/vue/"/>
+    
+    <category term="history" scheme="https://www.byxian.top/tags/history/"/>
+    
+    <category term="vue3" scheme="https://www.byxian.top/tags/vue3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>锚点定位scrollIntoView平滑过渡</title>
+    <link href="https://www.byxian.top/2021/09/29/scrollIntoView/"/>
+    <id>https://www.byxian.top/2021/09/29/scrollIntoView/</id>
+    <published>2021-09-29T03:48:00.000Z</published>
+    <updated>2021-09-29T04:10:48.652Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;一般网站使用的锚点定位都是使用的a标签，但是实际使用的时候会很生硬&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;使用&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="javascript" scheme="https://www.byxian.top/categories/javascript/"/>
+    
+    
+    <category term="平滑过渡" scheme="https://www.byxian.top/tags/%E5%B9%B3%E6%BB%91%E8%BF%87%E6%B8%A1/"/>
+    
+    <category term="scrollIntoView" scheme="https://www.byxian.top/tags/scrollIntoView/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>踩坑layui的tree组件-树形组件</title>
+    <link href="https://www.byxian.top/2021/09/29/layui-tree/"/>
+    <id>https://www.byxian.top/2021/09/29/layui-tree/</id>
+    <published>2021-09-29T03:26:00.000Z</published>
+    <updated>2021-09-29T04:14:08.807Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;layui的树形组件， data数组配置title和children之后使用&lt;code&gt;tree.getChecked(&#39;tree.id&#39;)&lt;/code&gt;之后返回的是空数据&lt;/p&gt;
+&lt;p&gt;这里在data中必须加一个id才可以&lt;/p&gt;
+&lt;figure</summary>
+        
+      
+    
+    
+    
+    
+    <category term="layui" scheme="https://www.byxian.top/tags/layui/"/>
+    
+    <category term="tree组件" scheme="https://www.byxian.top/tags/tree%E7%BB%84%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>安装VMware,主机键盘不能用解决方法</title>
-    <link href="https://www.byxian.top/2021/09/29/%E5%AE%89%E8%A3%85VMware-%E4%B8%BB%E6%9C%BA%E9%94%AE%E7%9B%98%E4%B8%8D%E8%83%BD%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>https://www.byxian.top/2021/09/29/%E5%AE%89%E8%A3%85VMware-%E4%B8%BB%E6%9C%BA%E9%94%AE%E7%9B%98%E4%B8%8D%E8%83%BD%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <link href="https://www.byxian.top/2021/09/29/vmware-kbd/"/>
+    <id>https://www.byxian.top/2021/09/29/vmware-kbd/</id>
     <published>2021-09-28T18:39:00.000Z</published>
-    <updated>2021-09-28T18:40:26.479Z</updated>
+    <updated>2021-09-29T04:14:40.430Z</updated>
     
     
       
@@ -39,27 +155,6 @@
     
     
     <category term="VMware" scheme="https://www.byxian.top/tags/VMware/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://www.byxian.top/2021/09/28/hello-world/"/>
-    <id>https://www.byxian.top/2021/09/28/hello-world/</id>
-    <published>2021-09-28T15:28:00.000Z</published>
-    <updated>2021-09-28T16:27:59.769Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Quick-Start-sdfskdf&quot;&gt;&lt;a href=&quot;#Quick-Start-sdfskdf&quot; class=&quot;headerlink&quot; title=&quot;Quick Start sdfskdf&quot;&gt;&lt;/a&gt;Quick Start sdfskdf&lt;/h2&gt;&lt;h3</summary>
-        
-      
-    
-    
-    
     
   </entry>
   

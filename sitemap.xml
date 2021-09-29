@@ -2,35 +2,140 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.byxian.top/2021/09/29/%E5%AE%89%E8%A3%85VMware-%E4%B8%BB%E6%9C%BA%E9%94%AE%E7%9B%98%E4%B8%8D%E8%83%BD%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://www.byxian.top/2021/09/29/vue-cdn/</loc>
     
-    <lastmod>2021-09-28</lastmod>
+    <lastmod>2021-09-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.byxian.top/2021/09/28/hello-world/</loc>
+    <loc>https://www.byxian.top/2021/09/29/vue-history/</loc>
     
-    <lastmod>2021-09-28</lastmod>
+    <lastmod>2021-09-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/home/index.html</loc>
+    
+    <lastmod>2021-09-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/about/index.html</loc>
+    
+    <lastmod>2021-09-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/2021/09/29/vmware-kbd/</loc>
+    
+    <lastmod>2021-09-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/2021/09/29/layui-tree/</loc>
+    
+    <lastmod>2021-09-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/2021/09/29/scrollIntoView/</loc>
+    
+    <lastmod>2021-09-29</lastmod>
     
   </url>
   
 
   <url>
     <loc>https://www.byxian.top/</loc>
-    <lastmod>2021-09-28</lastmod>
+    <lastmod>2021-09-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>https://www.byxian.top/tags/layui/</loc>
+    <lastmod>2021-09-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/tree%E7%BB%84%E4%BB%B6/</loc>
+    <lastmod>2021-09-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/%E5%B9%B3%E6%BB%91%E8%BF%87%E6%B8%A1/</loc>
+    <lastmod>2021-09-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/scrollIntoView/</loc>
+    <lastmod>2021-09-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.byxian.top/tags/VMware/</loc>
-    <lastmod>2021-09-28</lastmod>
+    <lastmod>2021-09-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/vue/</loc>
+    <lastmod>2021-09-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/cdn/</loc>
+    <lastmod>2021-09-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/history/</loc>
+    <lastmod>2021-09-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/vue3/</loc>
+    <lastmod>2021-09-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
 
+  
+  <url>
+    <loc>https://www.byxian.top/categories/javascript/</loc>
+    <lastmod>2021-09-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/categories/vue/</loc>
+    <lastmod>2021-09-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 </urlset>

@@ -2676,3 +2676,6 @@ pre .javascript .function {
   display: inline-block;
   box-sizing: border-box;
 }
+#vcomments > .txt-right{
+	display: none;
+}

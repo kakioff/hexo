@@ -1,3 +1,7 @@
 #vcomments > .txt-right{
-	display: none;
+	display: none !important;
+}
+.fa-spin {
+    -webkit-animation: none !important;
+    animation: none !important;
 }

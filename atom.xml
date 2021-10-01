@@ -6,7 +6,7 @@
   <link href="https://www.byxian.top/atom.xml" rel="self"/>
   
   <link href="https://www.byxian.top/"/>
-  <updated>2021-09-29T14:06:05.848Z</updated>
+  <updated>2021-10-01T14:25:14.121Z</updated>
   <id>https://www.byxian.top/</id>
   
   <author>
@@ -18,20 +18,13 @@
   
   <entry>
     <title>vue引入外部cdn报错 ‘XXX is not defined’</title>
-    <link href="https://www.byxian.top/2021/09/29/vue-cdn/"/>
-    <id>https://www.byxian.top/2021/09/29/vue-cdn/</id>
+    <link href="https://www.byxian.top/posts/747dba99/"/>
+    <id>https://www.byxian.top/posts/747dba99/</id>
     <published>2021-09-29T04:39:00.000Z</published>
-    <updated>2021-09-29T14:06:05.848Z</updated>
+    <updated>2021-10-01T14:25:14.121Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;我在vue网站中使用了&lt;a class=&quot;link&quot; href=&quot;https://www.vaptcha.com/&quot;&gt;vaptcha&lt;i class=&quot;fas</summary>
-        
-      
+    <summary type="html">vue项目引入了CDN后使用的时候出现了vaptcha is not defined</summary>
     
     
     
@@ -46,22 +39,13 @@
   
   <entry>
     <title>Vue切换路由模式，去掉链接后面的#</title>
-    <link href="https://www.byxian.top/2021/09/29/vue-history/"/>
-    <id>https://www.byxian.top/2021/09/29/vue-history/</id>
+    <link href="https://www.byxian.top/posts/c3dc9889/"/>
+    <id>https://www.byxian.top/posts/c3dc9889/</id>
     <published>2021-09-29T04:37:00.000Z</published>
-    <updated>2021-09-29T04:38:21.873Z</updated>
+    <updated>2021-10-01T14:23:57.310Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;最近开发一个Vue项目，但是链接后面一直显示一个#，显得很不美观 只需要将&lt;code&gt;vue-router&lt;/code&gt;的模式换成&lt;code&gt;history&lt;/code&gt;就行了&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure</summary>
-        
-      
+    <summary type="html">Vue项目一直显示一个#，只需要将vue-router的模式换成history就行了</summary>
     
     
     
@@ -78,22 +62,13 @@
   
   <entry>
     <title>锚点定位scrollIntoView平滑过渡</title>
-    <link href="https://www.byxian.top/2021/09/29/scrollIntoView/"/>
-    <id>https://www.byxian.top/2021/09/29/scrollIntoView/</id>
+    <link href="https://www.byxian.top/posts/e0f7c0ec/"/>
+    <id>https://www.byxian.top/posts/e0f7c0ec/</id>
     <published>2021-09-29T03:48:00.000Z</published>
-    <updated>2021-09-29T04:10:48.652Z</updated>
+    <updated>2021-10-01T14:27:26.683Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;一般网站使用的锚点定位都是使用的a标签，但是实际使用的时候会很生硬&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;使用&lt;a class=&quot;link&quot;</summary>
-        
-      
+    <summary type="html">使用scrollIntoView实现滚动平滑过渡</summary>
     
     
     
@@ -108,21 +83,13 @@
   
   <entry>
     <title>踩坑layui的tree组件-树形组件</title>
-    <link href="https://www.byxian.top/2021/09/29/layui-tree/"/>
-    <id>https://www.byxian.top/2021/09/29/layui-tree/</id>
+    <link href="https://www.byxian.top/posts/85af1ad9/"/>
+    <id>https://www.byxian.top/posts/85af1ad9/</id>
     <published>2021-09-29T03:26:00.000Z</published>
-    <updated>2021-09-29T04:14:08.807Z</updated>
+    <updated>2021-10-01T14:28:18.051Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;layui的树形组件， data数组配置title和children之后使用&lt;code&gt;tree.getChecked(&#39;tree.id&#39;)&lt;/code&gt;之后返回的是空数据&lt;/p&gt;
-&lt;p&gt;这里在data中必须加一个id才可以&lt;/p&gt;
-&lt;figure</summary>
-        
-      
+    <summary type="html">tree.getChecked(&#39;tree.id&#39;)之后返回的是空数据</summary>
     
     
     
@@ -135,22 +102,13 @@
   
   <entry>
     <title>安装VMware,主机键盘不能用解决方法</title>
-    <link href="https://www.byxian.top/2021/09/29/vmware-kbd/"/>
-    <id>https://www.byxian.top/2021/09/29/vmware-kbd/</id>
+    <link href="https://www.byxian.top/posts/5d59a84c/"/>
+    <id>https://www.byxian.top/posts/5d59a84c/</id>
     <published>2021-09-28T18:39:00.000Z</published>
-    <updated>2021-09-29T04:14:40.430Z</updated>
+    <updated>2021-10-01T14:26:11.500Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;不是第一次出现这个问题了，记录一下&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;右键电脑-属性-硬件-设备管理器，键盘那一项显示黄色叹号，属性显示为 由于其配置信息（注册表中的）不完整或已损坏，Windows</summary>
-        
-      
+    <summary type="html">VMware安装以后键盘不能用</summary>
     
     
     

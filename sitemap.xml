@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.byxian.top/posts/85af1ad9/</loc>
+    
+    <lastmod>2021-10-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/posts/e0f7c0ec/</loc>
+    
+    <lastmod>2021-10-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/posts/5d59a84c/</loc>
+    
+    <lastmod>2021-10-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/posts/747dba99/</loc>
+    
+    <lastmod>2021-10-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/posts/c3dc9889/</loc>
+    
+    <lastmod>2021-10-01</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.byxian.top/404.html</loc>
     
     <lastmod>2021-09-29</lastmod>
@@ -29,45 +64,10 @@
     
   </url>
   
-  <url>
-    <loc>https://www.byxian.top/2021/09/29/vue-cdn/</loc>
-    
-    <lastmod>2021-09-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.byxian.top/2021/09/29/vue-history/</loc>
-    
-    <lastmod>2021-09-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.byxian.top/2021/09/29/vmware-kbd/</loc>
-    
-    <lastmod>2021-09-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.byxian.top/2021/09/29/layui-tree/</loc>
-    
-    <lastmod>2021-09-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.byxian.top/2021/09/29/scrollIntoView/</loc>
-    
-    <lastmod>2021-09-29</lastmod>
-    
-  </url>
-  
 
   <url>
     <loc>https://www.byxian.top/</loc>
-    <lastmod>2021-09-30</lastmod>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,63 +75,63 @@
   
   <url>
     <loc>https://www.byxian.top/tags/layui/</loc>
-    <lastmod>2021-09-30</lastmod>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/tags/tree%E7%BB%84%E4%BB%B6/</loc>
-    <lastmod>2021-09-30</lastmod>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/tags/%E5%B9%B3%E6%BB%91%E8%BF%87%E6%B8%A1/</loc>
-    <lastmod>2021-09-30</lastmod>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/tags/scrollIntoView/</loc>
-    <lastmod>2021-09-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.byxian.top/tags/VMware/</loc>
-    <lastmod>2021-09-30</lastmod>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/tags/vue/</loc>
-    <lastmod>2021-09-30</lastmod>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/tags/cdn/</loc>
-    <lastmod>2021-09-30</lastmod>
+    <lastmod>2021-10-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/VMware/</loc>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/tags/history/</loc>
-    <lastmod>2021-09-30</lastmod>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/tags/vue3/</loc>
-    <lastmod>2021-09-30</lastmod>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -140,14 +140,14 @@
   
   <url>
     <loc>https://www.byxian.top/categories/javascript/</loc>
-    <lastmod>2021-09-30</lastmod>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/categories/vue/</loc>
-    <lastmod>2021-09-30</lastmod>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

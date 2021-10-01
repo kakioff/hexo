@@ -3,13 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="xian的blog, xian, byxian, 博客">
-    <meta name="description" content="byxian的博客网站-xian的栖息地">
     <meta name="author" content="byxian">
+    
+    <meta name="keywords" content="xxx is not defined,vue,xian的blog, xian, byxian, 博客">
+    
+      
+    <meta name="description" content="vue项目引入了CDN后使用的时候出现了vaptcha is not defined">
+    
+
     
     <title>
         
-            锚点定位scrollIntoView平滑过渡 |
+            vue引入外部cdn报错 ‘XXX is not defined’ |
         
         Byxian的博客
     </title>
@@ -173,7 +178,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">锚点定位scrollIntoView平滑过渡</span>
+            <span class="title-hover-animation">vue引入外部cdn报错 ‘XXX is not defined’</span>
         </div>
 
         
@@ -189,7 +194,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-29 11:48:00
+        <i class="fas fa-edit"></i>&nbsp;2021-09-29 12:39:00
     </span>
     
         <span class="article-categories article-meta-item">
@@ -197,7 +202,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/javascript/">javascript</a>&nbsp;
+                        <a href="/categories/vue/">vue</a>&nbsp;
                     </li>
                 
             </ul>
@@ -209,11 +214,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E5%B9%B3%E6%BB%91%E8%BF%87%E6%B8%A1/">平滑过渡</a>&nbsp;
+                        <a href="/tags/vue/">vue</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/scrollIntoView/">scrollIntoView</a>&nbsp;
+                        | <a href="/tags/cdn/">cdn</a>&nbsp;
                     </li>
                 
             </ul>
@@ -237,37 +242,19 @@
 
         <div class="article-content markdown-body">
             <blockquote>
-<p>一般网站使用的锚点定位都是使用的a标签，但是实际使用的时候会很生硬</p>
+<p>我在vue网站中使用了<a class="link" href="https://www.vaptcha.com/">vaptcha<i class="fas fa-external-link-alt"></i></a>的验证码，在<code>index.html</code>中引入了CDN后使用的时候出现了<code>vaptcha is not defined</code>试了很多别的方法引入都没用</p>
 </blockquote>
-<p>使用<a class="link" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollIntoView">scrollIntoView<i class="fas fa-external-link-alt"></i></a>就可以达到很好的效果,切换时有平滑过渡</p>
-<ul>
-<li><p>使用</p>
-<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"domId"</span>).scrollIntoView({</span><br><span class="line">    <span class="attr">behavior</span>: <span class="string">"smooth"</span> <span class="comment">// 平滑过渡</span></span><br><span class="line"> })</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>可选API</p>
+<h2 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h2><ol>
+<li><p>先正常引入js文件，index.html的script标签或者什么的。</p>
 </li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">api</th>
-<th align="center">必须</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">alignToTop</td>
-<td align="center">false</td>
-<td align="left"><strong>true</strong>: (默认)元素的顶端将和其所在滚动区的可视区域的顶端对齐。<br><strong>false</strong>: 元素的底端将和其所在滚动区的可视区域的底端对齐。</td>
-</tr>
-<tr>
-<td align="center">scrollIntoViewOptions</td>
-<td align="center">false</td>
-<td align="left"><strong>behavior</strong>: 定义动画过渡效果,auto(默认)/smooth<br><strong>block</strong>: 定义垂直方向的对齐,start(默认)/center/endnearest <br><strong>inline</strong>: 定义水平方向的对齐,start/center/end/nearest(默认)</td>
-</tr>
-</tbody></table>
-<ul>
-<li>官网示例<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"></span><br><span class="line">element.scrollIntoView();</span><br><span class="line">element.scrollIntoView(<span class="literal">false</span>);</span><br><span class="line">element.scrollIntoView({<span class="attr">block</span>: <span class="string">"end"</span>});</span><br><span class="line">element.scrollIntoView({<span class="attr">behavior</span>: <span class="string">"smooth"</span>, <span class="attr">block</span>: <span class="string">"end"</span>, <span class="attr">inline</span>: <span class="string">"nearest"</span>});</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
+<li><p>在webpack.base.conf.js中进行配置</p>
+<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">externals: {</span><br><span class="line">	vaptcha: 'vaptcha'</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>但是vue-cli3要在vue.config.js中配置，要是没有就新建一个文件</p>
+<p>&nbsp; </p><figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> &nbsp; configureWebpack: {</span><br><span class="line">    externals: {</span><br><span class="line">  		'vaptcha: 'vaptcha'</span><br><span class="line"> 	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+</li>
+</ol>
+<p>使用的时候直接在vue文件中引入就好了</p>
+<p>​<code>javascript import vaptcha from "vaptcha"    </code></p>
 
         </div>
 
@@ -275,11 +262,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：锚点定位scrollIntoView平滑过渡</li>
+        <li>本文标题：vue引入外部cdn报错 ‘XXX is not defined’</li>
         <li>本文作者：byxian</li>
-        <li>创建时间：2021-09-29 11:48:00</li>
+        <li>创建时间：2021-09-29 12:39:00</li>
         <li>
-            本文链接：https://www.byxian.top/2021/09/29/scrollIntoView/
+            本文链接：https://www.byxian.top/posts/747dba99/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -293,29 +280,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/09/29/vue-history/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">Vue切换路由模式，去掉链接后面的#</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/09/29/layui-tree/"
+                           href="/posts/c3dc9889/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">踩坑layui的tree组件-树形组件</span>
+                                <span class="post-nav-title-item">Vue切换路由模式，去掉链接后面的#</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -532,7 +504,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3"><span class="nav-text">如何解决</span></a></li></ol>
     </div>
 </div>
         </aside>
@@ -656,5 +628,20 @@
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

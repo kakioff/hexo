@@ -3,13 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="xian的blog, xian, byxian, 博客">
-    <meta name="description" content="byxian的博客网站-xian的栖息地">
     <meta name="author" content="byxian">
+    
+    <meta name="keywords" content="scrollIntoView,平滑过渡,锚点定位,xian的blog, xian, byxian, 博客">
+    
+      
+    <meta name="description" content="使用scrollIntoView实现滚动平滑过渡">
+    
+
     
     <title>
         
-            Vue切换路由模式，去掉链接后面的# |
+            锚点定位scrollIntoView平滑过渡 |
         
         Byxian的博客
     </title>
@@ -173,7 +178,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Vue切换路由模式，去掉链接后面的#</span>
+            <span class="title-hover-animation">锚点定位scrollIntoView平滑过渡</span>
         </div>
 
         
@@ -189,7 +194,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-29 12:37:00
+        <i class="fas fa-edit"></i>&nbsp;2021-09-29 11:48:00
     </span>
     
         <span class="article-categories article-meta-item">
@@ -197,7 +202,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/vue/">vue</a>&nbsp;
+                        <a href="/categories/javascript/">javascript</a>&nbsp;
                     </li>
                 
             </ul>
@@ -209,15 +214,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/vue/">vue</a>&nbsp;
+                        <a href="/tags/%E5%B9%B3%E6%BB%91%E8%BF%87%E6%B8%A1/">平滑过渡</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/history/">history</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/vue3/">vue3</a>&nbsp;
+                        | <a href="/tags/scrollIntoView/">scrollIntoView</a>&nbsp;
                     </li>
                 
             </ul>
@@ -241,18 +242,37 @@
 
         <div class="article-content markdown-body">
             <blockquote>
-<p>最近开发一个Vue项目，但是链接后面一直显示一个#，显得很不美观 只需要将<code>vue-router</code>的模式换成<code>history</code>就行了</p>
+<p>一般网站使用的锚点定位都是使用的a标签，但是实际使用的时候会很生硬</p>
 </blockquote>
-<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//hash就是有#的，也是默认的</span></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter({</span><br><span class="line">	<span class="attr">mode</span>:<span class="string">'history'</span>,</span><br><span class="line">	<span class="attr">routes</span>:[……],</span><br><span class="line">	……</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>但是我的是vue3，这个方法没用，也没找到<code>const router = new VueRouter</code> 就可以用下面的方式</p>
-</blockquote>
-<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> {</span><br><span class="line">	createRouter,</span><br><span class="line">	<span class="comment">//createWebHashHistory, // hash模式</span></span><br><span class="line">	createWebHistory<span class="comment">//history模式</span></span><br><span class="line">} <span class="keyword">from</span> <span class="string">'vue-router'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = createRouter({</span><br><span class="line">  <span class="comment">// history: createWebHashHistory(), // hash模式</span></span><br><span class="line">  <span class="attr">history</span>: createWebHistory(process.env.BASE_URL),<span class="comment">//history模式</span></span><br><span class="line">  routes</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>现在链接显示就正常了，nice</p>
-</blockquote>
+<p>使用<a class="link" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollIntoView">scrollIntoView<i class="fas fa-external-link-alt"></i></a>就可以达到很好的效果,切换时有平滑过渡</p>
+<ul>
+<li><p>使用</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"domId"</span>).scrollIntoView({</span><br><span class="line">    <span class="attr">behavior</span>: <span class="string">"smooth"</span> <span class="comment">// 平滑过渡</span></span><br><span class="line"> })</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>可选API</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">api</th>
+<th align="center">必须</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">alignToTop</td>
+<td align="center">false</td>
+<td align="left"><strong>true</strong>: (默认)元素的顶端将和其所在滚动区的可视区域的顶端对齐。<br><strong>false</strong>: 元素的底端将和其所在滚动区的可视区域的底端对齐。</td>
+</tr>
+<tr>
+<td align="center">scrollIntoViewOptions</td>
+<td align="center">false</td>
+<td align="left"><strong>behavior</strong>: 定义动画过渡效果,auto(默认)/smooth<br><strong>block</strong>: 定义垂直方向的对齐,start(默认)/center/endnearest <br><strong>inline</strong>: 定义水平方向的对齐,start/center/end/nearest(默认)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>官网示例<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"></span><br><span class="line">element.scrollIntoView();</span><br><span class="line">element.scrollIntoView(<span class="literal">false</span>);</span><br><span class="line">element.scrollIntoView({<span class="attr">block</span>: <span class="string">"end"</span>});</span><br><span class="line">element.scrollIntoView({<span class="attr">behavior</span>: <span class="string">"smooth"</span>, <span class="attr">block</span>: <span class="string">"end"</span>, <span class="attr">inline</span>: <span class="string">"nearest"</span>});</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
 
         </div>
 
@@ -260,11 +280,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：Vue切换路由模式，去掉链接后面的#</li>
+        <li>本文标题：锚点定位scrollIntoView平滑过渡</li>
         <li>本文作者：byxian</li>
-        <li>创建时间：2021-09-29 12:37:00</li>
+        <li>创建时间：2021-09-29 11:48:00</li>
         <li>
-            本文链接：https://www.byxian.top/2021/09/29/vue-history/
+            本文链接：https://www.byxian.top/posts/e0f7c0ec/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -281,13 +301,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/09/29/vue-cdn/"
+                           href="/posts/c3dc9889/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">vue引入外部cdn报错 ‘XXX is not defined’</span>
+                                <span class="post-nav-title-item">Vue切换路由模式，去掉链接后面的#</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -297,10 +317,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/09/29/scrollIntoView/"
+                           href="/posts/85af1ad9/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">锚点定位scrollIntoView平滑过渡</span>
+                                <span class="post-nav-title-item">踩坑layui的tree组件-树形组件</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -641,5 +661,20 @@
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

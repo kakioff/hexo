@@ -14,10 +14,8 @@
     
     <title>
         
-            test |
-        
         Byxian的博客
-    </title><meta name="robots" content="noindex">
+    </title>
     
 <link rel="stylesheet" href="/css/style.css">
 
@@ -205,175 +203,77 @@ p.spoiler {
 
                 
                     <div class="fade-in-down-animation">
-    <div class="article-content-container">
-
-        <div class="article-title">
-            <span class="title-hover-animation">test</span>
-        </div>
-
+    <div class="page-template-container">
         
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/xian.png">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">byxian</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-01 23:46:21
-    </span>
-    
-    
-
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
-
-                    </div>
-                </div>
-            </div>
         
-
-        <div class="article-content markdown-body">
-            <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><blockquote class="pullquote mindmap mindmap-md"><ul>
-<li><a class="link" href="https://hunterx.xyz/use-mindmap-in-hexo.html">在 Hexo 中使用思维导图<i class="fas fa-external-link-alt"></i></a>
-<ul>
-<li>前言</li>
-<li>操作指南
-<ul>
-<li>准备需要的文件</li>
-<li>为主题添加 CSS/JS 文件</li>
-</ul>
-</li>
-<li>使用方法</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<blockquote id="38041"><script>
-    window.addEventListener('load', function() {
-      $.getJSON('https://zh.wikipedia.org/w/api.php?action=query&origin=*&prop=extracts&exsentences=10&format=json&exintro=&titles=IPhone', function(result) {
-        const pages = result.query.pages;
-        const firstPageIndex = Object.keys(pages)[0];
-        const extract = pages[firstPageIndex].extract;
-        $('#38041').prepend(extract);
-      });
-    });
-  </script><p><a class="link" href="https://zh.wikipedia.org/wiki/IPhone">Wikipedia<i class="fas fa-external-link-alt"></i></a></p></blockquote>
-<!-- flag of hidden posts --><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.6.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.6.0/dist/mindmap.min.css">
-        </div>
-
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：test</li>
-        <li>本文作者：byxian</li>
-        <li>创建时间：2021-10-01 23:46:21</li>
-        <li>
-            本文链接：https://www.byxian.top/posts/d87f7e0c/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
-    </ul>
-</div>
-
-            </div>
-        
-
-        
-
-        
-            <div class="comment-container">
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
-    </div>
-    
-
-        
+        <div class="page-template-content markdown-body">
             
-    <div class="valine-container">
-        <script data-pjax
-                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
-        <div id="vcomments"></div>
-        <script data-pjax>
-            function loadValine() {
-                new Valine({
-                    el: '#vcomments',
-                    appId: 'j6T49yx0Pt6N1T8Q0OTJDdsw-gzGzoHsz',
-                    appKey: '2cMi1sf8WKuplvXV6KPMl3iE',
-                    meta: ['nick', 'mail', 'link'],
-                    avatar: 'wavatar',
-                    enableQQ: true,
-                    placeholder: '说点什么吧',
-                    lang: 'zh-CN'.toLowerCase()
-                });
-
-                function getAuthor(language) {
-                    switch (language) {
-                        case 'en':
-                            return 'Author';
-                        case 'zh-CN':
-                            return '博主';
-                        default:
-                            return 'Master';
-                    }
-                }
-
-                // Add "Author" identify
-                const getValineDomTimer = setInterval(() => {
-                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
-                    if (vcards.length > 0) {
-                        let author = 'byxian';
-
-                        if (author) {
-                            for (let vcard of vcards) {
-                                const vnick_dom = vcard.querySelector('.vhead .vnick');
-                                const vnick = vnick_dom.innerHTML;
-                                if (vnick === author) {
-                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
-                                }
-                            }
-                        }
-                        clearInterval(getValineDomTimer);
-                    } else {
-                        clearInterval(getValineDomTimer);
-                    }
-                }, 2000);
-            }
-
-            if ('true') {
-                const loadValineTimeout = setTimeout(() => {
-                    loadValine();
-                    clearTimeout(loadValineTimeout);
-                }, 1000);
-            } else {
-                window.addEventListener('DOMContentLoaded', loadValine);
-            }
-        </script>
-    </div>
-
-
-
-        
-    
-</div>
-
-            </div>
-        
+                <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1>xian`s 博客网站</h1>
+<p><a href="https://www.byxian.top">xian的博客网站</a></p>
+<h1>包含的插件和用法</h1>
+<blockquote>
+<p>来自 <a class="link" href="https://loafing.cn/posts/hexo-tags.html#%E5%85%B6%E5%AE%83">「推荐」本站用到的 hexo 插件 | 若风 (loafing.cn)<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h2 id="文字上方注释-Ruby"><a class="link" href="https://github.com/lostandfound/markdown-it-ruby">文字上方注释 Ruby<i class="fas fa-external-link-alt"></i></a></h2>
+<blockquote>
+<p>实测中<code>hexo-tag-pinyin</code>不可用，会报错</p>
+</blockquote>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://cdn.jsdelivr.net/gh/kakioff/pictureBeds@main/20211001/readme.1jauy9y42kv4.png" alt="readme"></p>
+<h2 id="悬浮注释-hint"><a class="link" href="https://github.com/etigerstudio/hexo-tag-hint">悬浮注释 hint<i class="fas fa-external-link-alt"></i></a></h2>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://cdn.jsdelivr.net/gh/kakioff/pictureBeds@main/20211001/readme.4rtmfs4luvm0.png" alt="readme"></p>
+<h2 id="豆瓣电影-读书-音乐卡片"><a class="link" href="https://github.com/TankNee/hexo-douban-card">豆瓣电影/读书/音乐卡片<i class="fas fa-external-link-alt"></i></a></h2>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">{% douban movie 24745500 %}</span><br><span class="line">{% douban book 30376420 %}</span><br><span class="line">{% douban music 35099703 %}</span><br></pre></td></tr></tbody></table></figure>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://cdn.jsdelivr.net/gh/kakioff/pictureBeds@main/20211001/readme.7il25s3fz8c0.png" alt="readme"></p>
+<h2 id="pdf"><a class="link" href="https://github.com/superalsrk/hexo-pdf">pdf<i class="fas fa-external-link-alt"></i></a></h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">{% pdf 文件地址 %}</span><br><span class="line">{% pdf http://7xov2f.com1.z0.glb.clouddn.com/bash_freshman.pdf %}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="文字遮盖效果-Spoiler"><a class="link" href="https://github.com/unnamed42/hexo-spoiler">文字遮盖效果 Spoiler<i class="fas fa-external-link-alt"></i></a></h2>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># _config.yml</span></span><br><span class="line"><span class="attr">spoiler:</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">blur</span> <span class="comment"># 或者box</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">black</span> <span class="comment"># 仅当 style 为 box 时起效</span></span><br><span class="line">  <span class="attr">p:</span> <span class="literal">false</span> <span class="comment"># 没懂啥意思，不管它</span></span><br></pre></td></tr></tbody></table></figure>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://cdn.jsdelivr.net/gh/kakioff/pictureBeds@main/20211001/readme.793ahq865bg0.png" alt="readme"></p>
+<h2 id="数据可视化工具-Chartjs"><a class="link" href="https://github.com/Shen-Yu/hexo-tag-chart">数据可视化工具 Chartjs<i class="fas fa-external-link-alt"></i></a></h2>
+<p><a class="link" href="https://chartjs.bootcss.com/">Chart.js 介绍<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" href="https://shen-yu.gitee.io/2020/chartjs/">插件预览效果<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">{% chart 90% 300 %}</span><br><span class="line">\\TODO option goes here</span><br><span class="line">{% endchart %}</span><br></pre></td></tr></tbody></table></figure>
+<p>其中 <code>chart</code> 是标签名，<code>endchart</code> 是结束标签，不需要更改，<code>90%</code> 是图表容器的相对宽度，默认是<code>100%</code>，<code>300</code> 是图表容器的高度，默认是按正常比例缩放的，你可以通过设置 <code>options</code> 里面的 <code>aspectRatio</code> 属性来调整宽高比例，另外还有许多属性可以自定义，你可以查看 <a class="link" href="https://www.chartjs.org/">官方文档<i class="fas fa-external-link-alt"></i></a> (<a class="link" href="https://chartjs.bootcss.com/">中文文档<i class="fas fa-external-link-alt"></i></a>)。在标签之间的部分，都是需要自己填充的图表数据和属性。</p>
+<p>例子：</p>
+<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">{% chart 90% 300 %}</span><br><span class="line">    {</span><br><span class="line">    type: 'line',</span><br><span class="line">    data: {</span><br><span class="line">    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],</span><br><span class="line">    datasets: [{</span><br><span class="line">        label: 'My First dataset',</span><br><span class="line">        backgroundColor: 'rgb(<span class="number">255</span>, 99, 132)',</span><br><span class="line">        borderColor: 'rgb(<span class="number">255</span>, 99, 132)',</span><br><span class="line">        data: [<span class="number">0</span>, <span class="number">10</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">45</span>]</span><br><span class="line">        }]</span><br><span class="line">    },</span><br><span class="line">    options: {</span><br><span class="line">        responsive: <span class="literal">true</span>,</span><br><span class="line">        title: {</span><br><span class="line">        display: <span class="literal">true</span>,</span><br><span class="line">        text: 'Chart.js Line Chart'</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line">{% endchart %}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Instagram分享"><a class="link" href="https://github.com/tea3/hexo-tag-instagram">Instagram分享<i class="fas fa-external-link-alt"></i></a></h2>
+<figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% instagram false https://www.instagram.com/p/B2vyQrxHuIN/ 100% %}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="hexo-simple-mindmap-思维导图"><a class="link" href="https://github.com/HunterXuan/hexo-simple-mindmap">hexo-simple-mindmap<i class="fas fa-external-link-alt"></i></a> <a class="link" href="https://hunterx.xyz/use-mindmap-in-hexo.html">思维导图<i class="fas fa-external-link-alt"></i></a></h2>
+<figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">{% pullquote mindmap mindmap-md %}</span><br><span class="line"><span class="bullet">-</span> [<span class="string">在 Hexo 中使用思维导图</span>](<span class="link">https://hunterx.xyz/use-mindmap-in-hexo.html</span>)</span><br><span class="line"><span class="bullet">  -</span> 前言</span><br><span class="line"><span class="bullet">  -</span> 操作指南</span><br><span class="line"><span class="bullet">    -</span> 准备需要的文件</span><br><span class="line"><span class="bullet">    -</span> 为主题添加 CSS/JS 文件</span><br><span class="line"><span class="bullet">  -</span> 使用方法</span><br><span class="line">{% endpullquote %}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="hexo-tag-wikipedia-嵌入维基百科摘要"><a class="link" href="https://github.com/tuanna-hsp/hexo-tag-wikipedia">hexo-tag-wikipedia 嵌入维基百科摘要<i class="fas fa-external-link-alt"></i></a></h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% wikipedia title:GitHub wikiButton:true %}</span><br></pre></td></tr></tbody></table></figure>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title:&lt;wiki_title&gt;</code></td>
+<td>For example with the wiki URL <a class="link" href="https://en.wikipedia.org/wiki/Star_Wars">https://en.wikipedia.org/wiki/Star_Wars<i class="fas fa-external-link-alt"></i></a>, it is ‘Star_Wars’</td>
+</tr>
+<tr>
+<td><code>wikiButton:&lt;true&gt;</code></td>
+<td>Whether or not to show the Wikipedia page link. Default to <code>false</code></td>
+</tr>
+<tr>
+<td><code>lang:&lt;code&gt;</code></td>
+<td>The wiki page language code. <code>en</code>, <code>fr</code>, <code>ja</code>… Default to <code>en</code></td>
+</tr>
+<tr>
+<td><code>sentences:&lt;number&gt;</code></td>
+<td>Limit the number of sentences to show if specified. Only accept value from 1 to 10. Omit to show the full extract</td>
+</tr>
+</tbody>
+</table>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.6.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.6.0/dist/mindmap.min.css">
+            
+        </div>
+        <div class="page-template-comments">
+            
+        </div>
     </div>
 </div>
 
@@ -420,27 +320,6 @@ p.spoiler {
         </div>
     </div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="tools-item page-aside-toggle">
-                <i class="fas fa-outdent"></i>
-            </li>
-        
-
-        <!-- go comment -->
-        
-            <li class="go-comment">
-                <i class="fas fa-comment"></i>
-            </li>
-        
-    </ul>
-</div>
-
-        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -495,14 +374,6 @@ p.spoiler {
 
     </div>
 
-    
-        <aside class="page-aside">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        
-    </div>
-</div>
-        </aside>
     
 
     <div class="image-viewer-container">
@@ -576,14 +447,6 @@ p.spoiler {
 
 
 <div class="post-scripts pjax">
-    
-        
-<script src="/js/left-side-toggle.js"></script>
-
-<script src="/js/libs/anime.min.js"></script>
-
-<script src="/js/toc.js"></script>
-
     
 </div>
 

@@ -260,13 +260,13 @@ p.spoiler {
 </li>
 </ul>
 </blockquote>
-<blockquote id="11786"><script>
+<blockquote id="26496"><script>
     window.addEventListener('load', function() {
       $.getJSON('https://zh.wikipedia.org/w/api.php?action=query&origin=*&prop=extracts&exsentences=10&format=json&exintro=&titles=IPhone', function(result) {
         const pages = result.query.pages;
         const firstPageIndex = Object.keys(pages)[0];
         const extract = pages[firstPageIndex].extract;
-        $('#11786').prepend(extract);
+        $('#26496').prepend(extract);
       });
     });
   </script><p><a class="link" href="https://zh.wikipedia.org/wiki/IPhone">Wikipedia<i class="fas fa-external-link-alt"></i></a></p></blockquote>

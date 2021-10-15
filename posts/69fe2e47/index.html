@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="byxian">
+    
+    <meta name="keywords" content="xian的blog, xian, byxian, 博客">
+    
+      
+    <meta name="description" content="byxian的博客网站-xian的栖息地。">
+    
+
+    
+    <title>
+        
+            利用 vue3 给 element-plus 的 el-dialog 增加拖拽功能 |
+        
+        Byxian的博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/xian.ico">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"www.byxian.top","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/xian.png","favicon":"/images/xian.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"这是xian的栖息地"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<style type="text/css">
+.spoiler {
+  display: inline-flex;
+}
+p.spoiler {
+  display: flex;
+}
+.spoiler a {
+  pointer-events: none;
+}
+.spoiler-blur, .spoiler-blur > * {
+  transition: text-shadow .5s ease;
+}
+.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
+  text-shadow: 0 0 5px grey;
+}
+.spoiler-box, .spoiler-box > * {
+  transition: color .5s ease,
+  background-color .5s ease;
+}
+.spoiler .spoiler-box, .spoiler .spoiler-box > * {
+  color: black;
+  background-color: black;
+  text-shadow: none;
+}</style><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="xian的blog" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}</style></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Byxian的博客
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">利用 vue3 给 element-plus 的 el-dialog 增加拖拽功能</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/xian.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">byxian</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-10-16 00:23:00
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/vue/">vue</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/vue/element-plus/">element-plus</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/vue/">vue</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/element-plus/">element-plus</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/el-dialog/">el-dialog</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%BC%B9%E7%AA%97/">弹窗</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%8B%96%E6%8B%BD/">拖拽</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%85%A8%E5%B1%8F/">全屏</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1>前言</h1>
+<p>代码来自<a class="link" href="https://www.cnblogs.com/jyk/p/14807244.html">使用 vue3 的自定义指令给 element-plus 的 el-dialog 增加拖拽功能<i class="fas fa-external-link-alt"></i></a>，用的时候发现一些问题，我进行了二次修改。</p>
+<h1>变化</h1>
+<ul>
+<li>限制边缘</li>
+<li>全屏效果</li>
+<li>限制在弹窗的 <code>header</code> 拖动</li>
+<li>增加用户体验🤣</li>
+</ul>
+<h1>效果</h1>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/6cf80b7b4af5481c9bf558c4b45704cb.gif" alt="部分效果"></p>
+<h1>使用</h1>
+<ol>
+<li>新建一个 js 文件，内容为<a href="#dialogDrag.js">如下代码</a></li>
+<li>在 <code>main.js</code> 中引入并 <code>use</code> <figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ......</span></span><br><span class="line"><span class="keyword">import</span> dialogDrag <span class="keyword">from</span> <span class="string">'./assets/js/dialogDrag.js'</span></span><br><span class="line"><span class="keyword">var</span> app = createApp(App)</span><br><span class="line">app.use(dialogDrag)</span><br><span class="line"><span class="comment">// ......</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li>使用的时候 <code>el-dialog</code> 标签用一个 <code>div</code> 包起来，<code>div</code> 加上 <code>v-dialogdrag</code> <figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-dialogdrag</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">el-dialog</span> <span class="attr">v-model</span>=<span class="string">"show"</span> <span class="attr">:title</span>=<span class="string">"title"</span>&gt;</span></span><br><span class="line">		内容</span><br><span class="line">	<span class="tag">&lt;/<span class="name">el-dialog</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+<h1><span id="dialogDrag.js">代码</span></h1>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bus = <span class="built_in">require</span>(<span class="string">"vue3-eventbus"</span>)</span><br><span class="line"><span class="keyword">const</span> dialogDrag = <span class="function">(<span class="params">app</span>) =&gt;</span> {</span><br><span class="line">	app.directive(<span class="string">'dialogdrag'</span>, {</span><br><span class="line">		<span class="comment">// 渲染完毕</span></span><br><span class="line">		<span class="function"><span class="title">mounted</span>(<span class="params">el</span>)</span> {</span><br><span class="line">			<span class="comment">// 可视窗口的宽度</span></span><br><span class="line">			<span class="keyword">const</span> clientWidth = <span class="built_in">document</span>.documentElement.clientWidth</span><br><span class="line">			<span class="comment">// 可视窗口的高度</span></span><br><span class="line">			<span class="keyword">const</span> clientHeight = <span class="built_in">document</span>.documentElement.clientHeight</span><br><span class="line">			<span class="comment">// 记录坐标</span></span><br><span class="line">			<span class="keyword">let</span> domset = {</span><br><span class="line">				<span class="attr">x</span>: clientWidth / <span class="number">4</span>, <span class="comment">// 默认width 50%</span></span><br><span class="line">				<span class="attr">y</span>: clientHeight * <span class="number">15</span> / <span class="number">100</span> <span class="comment">// 根据 15vh 计算</span></span><br><span class="line">			}</span><br><span class="line">			<span class="comment">// 弹窗的容器</span></span><br><span class="line">			<span class="keyword">const</span> domDrag = el.firstElementChild.firstElementChild</span><br><span class="line">			<span class="comment">// 超出部分隐藏，不显示滚动条</span></span><br><span class="line">			el.firstElementChild.style.overflow = <span class="string">"hidden"</span></span><br><span class="line">			<span class="comment">// 重新设置上、左距离</span></span><br><span class="line">			domDrag.style.marginTop = domset.y + <span class="string">'px'</span></span><br><span class="line">			domDrag.style.marginLeft = domset.x + <span class="string">'px'</span></span><br><span class="line">			<span class="comment">// 记录拖拽开始的光标坐标，0 表示没有拖拽</span></span><br><span class="line">			<span class="keyword">let</span> start = {</span><br><span class="line">				<span class="attr">x</span>: <span class="number">0</span>,</span><br><span class="line">				<span class="attr">y</span>: <span class="number">0</span></span><br><span class="line">			}</span><br><span class="line">			<span class="comment">// 移动中记录偏移量</span></span><br><span class="line">			<span class="keyword">let</span> move = {</span><br><span class="line">				<span class="attr">x</span>: <span class="number">0</span>,</span><br><span class="line">				<span class="attr">y</span>: <span class="number">0</span></span><br><span class="line">			}</span><br><span class="line">			<span class="comment">// 限制拖动弹窗的 header 才可以移动弹窗</span></span><br><span class="line">			<span class="keyword">const</span> dialogHeader = el.getElementsByClassName(<span class="string">'el-dialog__header'</span>)[<span class="number">0</span>]</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 添加右上角全屏显示按钮， i 标签是阿里图标库里面的</span></span><br><span class="line">			<span class="keyword">let</span> div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line">			div.style.fontSize=<span class="string">'.8rem'</span></span><br><span class="line">			div.style.position=<span class="string">'absolute'</span></span><br><span class="line">			div.style.right=<span class="string">'45px'</span></span><br><span class="line">			div.style.top=<span class="string">'20px'</span></span><br><span class="line">			<span class="keyword">let</span> full_button = <span class="built_in">document</span>.createElement(<span class="string">'span'</span>)</span><br><span class="line">			full_button.style.cursor=<span class="string">'pointer'</span></span><br><span class="line">			full_button.innerHTML=<span class="string">'&lt;i class="iconfont icon-full"&gt;&lt;/i&gt;'</span></span><br><span class="line">			full_button.addEventListener(<span class="string">'click'</span>, full_dia) <span class="comment">// 单击全屏</span></span><br><span class="line">			div.appendChild(full_button)</span><br><span class="line">			dialogHeader.appendChild(div)</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">let</span> full = <span class="literal">false</span></span><br><span class="line">			<span class="comment">/**</span></span><br><span class="line"><span class="comment">			* 双击全屏</span></span><br><span class="line"><span class="comment">			*/</span></span><br><span class="line">			dialogHeader.addEventListener(<span class="string">'dblclick'</span>,full_dia)</span><br><span class="line">			<span class="function"><span class="keyword">function</span> <span class="title">full_dia</span>(<span class="params"></span>)</span>{</span><br><span class="line">				<span class="keyword">if</span> (full) {</span><br><span class="line">					domset = {</span><br><span class="line">						<span class="attr">x</span>: clientWidth / <span class="number">4</span>,</span><br><span class="line">						<span class="attr">y</span>: clientHeight * <span class="number">15</span> / <span class="number">100</span></span><br><span class="line">					}</span><br><span class="line">					domDrag.style.width = <span class="string">"50%"</span></span><br><span class="line">					domDrag.style.height = <span class="string">"auto"</span></span><br><span class="line">					domDrag.style.marginLeft = domset.x + <span class="string">'px'</span></span><br><span class="line">					domDrag.style.marginTop = domset.y + <span class="string">'px'</span></span><br><span class="line">					full_button.innerHTML=<span class="string">'&lt;i class="iconfont icon-full"&gt;&lt;/i&gt;'</span></span><br><span class="line">					<span class="comment">// 由于我弹窗里面有 echarts 图表，要让图表修改大小，使用的是vue3 bus</span></span><br><span class="line">					bus.bus.off(<span class="string">'domResize'</span>)</span><br><span class="line">					bus.bus.emit(<span class="string">'domResize'</span>, {</span><br><span class="line">						<span class="attr">width</span>: domDrag.clientWidth,</span><br><span class="line">						<span class="attr">height</span>: domDrag.clientHeight</span><br><span class="line">					})</span><br><span class="line">					full = <span class="literal">false</span></span><br><span class="line">				} <span class="keyword">else</span> {</span><br><span class="line">					domDrag.style.width = <span class="string">"100%"</span></span><br><span class="line">					domDrag.style.height = <span class="string">"100%"</span></span><br><span class="line">					domDrag.style.marginLeft = <span class="string">'0'</span></span><br><span class="line">					domDrag.style.marginTop = <span class="string">'0'</span></span><br><span class="line">					full_button.innerHTML=<span class="string">'&lt;i class="iconfont icon-fullscreen-exit"&gt;&lt;/i&gt;'</span></span><br><span class="line">					bus.bus.off(<span class="string">'domResize'</span>)</span><br><span class="line">					bus.bus.emit(<span class="string">'domResize'</span>, {</span><br><span class="line">						<span class="attr">width</span>: domDrag.clientWidth,</span><br><span class="line">						<span class="attr">height</span>: domDrag.clientHeight</span><br><span class="line">					})</span><br><span class="line">					full = <span class="literal">true</span></span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line"></span><br><span class="line">			<span class="comment">/**</span></span><br><span class="line"><span class="comment">			* 鼠标按下，开始拖拽，添加 mousemove、mouseup 事件</span></span><br><span class="line"><span class="comment">			*/</span></span><br><span class="line">			dialogHeader.onmousedown = <span class="function">(<span class="params">e</span>) =&gt;</span> {</span><br><span class="line">				<span class="comment">// 判断对话框是否重新打开</span></span><br><span class="line">				<span class="keyword">if</span> (domDrag.style.marginTop === <span class="string">'15vh'</span>) {</span><br><span class="line">					<span class="comment">// 重新打开，设置 domset.y  top</span></span><br><span class="line">					domset.y = clientHeight * <span class="number">15</span> / <span class="number">100</span></span><br><span class="line">				}</span><br><span class="line">				start.x = e.clientX</span><br><span class="line">				start.y = e.clientY</span><br><span class="line">				domDrag.style.cursor = <span class="string">'move'</span> <span class="comment">// 改变光标形状</span></span><br><span class="line">				<span class="comment">// 鼠标拖出浏览器外部的时候会选中文本，需要禁用</span></span><br><span class="line">				<span class="built_in">document</span>.body.style.userSelect = <span class="string">'none'</span></span><br><span class="line">				<span class="comment">// 使用 document 的 mousemove ，这样鼠标脱离 header 区域还是可以正常拖动（贴着窗口边缘移动）</span></span><br><span class="line">				<span class="comment">// 鼠标移动，实时跟踪</span></span><br><span class="line">				<span class="built_in">document</span>.addEventListener(<span class="string">'mousemove'</span>, dia_mousemove)</span><br><span class="line">				<span class="comment">// 鼠标抬起，结束拖拽，once: 只执行一次</span></span><br><span class="line">				<span class="built_in">document</span>.addEventListener(<span class="string">'mouseup'</span>, dia_mouseup, {</span><br><span class="line">					<span class="attr">once</span>: <span class="literal">true</span></span><br><span class="line">				})</span><br><span class="line">			}</span><br><span class="line"></span><br><span class="line">			<span class="comment">/**</span></span><br><span class="line"><span class="comment">			* 鼠标移动，实时跟踪</span></span><br><span class="line"><span class="comment">			*/</span></span><br><span class="line">			<span class="function"><span class="keyword">function</span> <span class="title">dia_mousemove</span>(<span class="params">e</span>) </span>{</span><br><span class="line">				<span class="keyword">if</span> (start.x === <span class="number">0</span>) { <span class="comment">// 不是拖拽状态</span></span><br><span class="line">					<span class="keyword">return</span></span><br><span class="line">				}</span><br><span class="line">				move.x = e.clientX - start.x</span><br><span class="line">				move.y = e.clientY - start.y</span><br><span class="line">				<span class="comment">// 弹窗 左、上、右、下 到窗口边缘的距离</span></span><br><span class="line">				<span class="keyword">let</span> left = domset.x + move.x,</span><br><span class="line">					top = domset.y + move.y</span><br><span class="line">				<span class="keyword">let</span> right = left + domDrag.clientWidth,</span><br><span class="line">					bottom = top + domDrag.clientHeight</span><br><span class="line">					</span><br><span class="line">				<span class="keyword">if</span> (left &lt;= <span class="number">0</span>) {</span><br><span class="line">					domDrag.style.marginLeft = <span class="string">'0px'</span></span><br><span class="line">				} <span class="keyword">else</span> <span class="keyword">if</span> (right &gt;= clientWidth) {</span><br><span class="line">					domDrag.style.marginLeft = (clientWidth - domDrag.clientWidth) + <span class="string">'px'</span></span><br><span class="line">				} <span class="keyword">else</span> {</span><br><span class="line">					domDrag.style.marginLeft = left + <span class="string">'px'</span></span><br><span class="line">				}</span><br><span class="line">				<span class="keyword">if</span> (top &lt;= <span class="number">0</span>) {</span><br><span class="line">					domDrag.style.marginTop = <span class="string">'0px'</span></span><br><span class="line">				} <span class="keyword">else</span> <span class="keyword">if</span> (bottom &gt;= clientHeight) {</span><br><span class="line">					domDrag.style.marginTop = (clientHeight - domDrag.clientHeight) + <span class="string">'px'</span></span><br><span class="line">				} <span class="keyword">else</span> {</span><br><span class="line">					domDrag.style.marginTop = top + <span class="string">'px'</span></span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line"></span><br><span class="line">			<span class="comment">/**</span></span><br><span class="line"><span class="comment">			* 鼠标抬起，结束拖拽，移除 mousemove 事件</span></span><br><span class="line"><span class="comment">			*/</span></span><br><span class="line">			<span class="function"><span class="keyword">function</span> <span class="title">dia_mouseup</span>(<span class="params">e</span>) </span>{</span><br><span class="line">				move.x = e.clientX - start.x</span><br><span class="line">				move.y = e.clientY - start.y</span><br><span class="line">				<span class="keyword">let</span> left = domset.x + move.x,</span><br><span class="line">					top = domset.y + move.y</span><br><span class="line">				<span class="keyword">let</span> right = left + domDrag.clientWidth,</span><br><span class="line">					bottom = top + domDrag.clientHeight</span><br><span class="line">					</span><br><span class="line">				domDrag.style.cursor = <span class="string">''</span> <span class="comment">// 恢复光标形状</span></span><br><span class="line">				<span class="built_in">document</span>.body.style.userSelect = <span class="string">'text'</span> <span class="comment">// 恢复body可选中</span></span><br><span class="line">				<span class="comment">// 结束拖拽</span></span><br><span class="line">				start.x = <span class="number">0</span></span><br><span class="line">				<span class="keyword">if</span> (left &lt;= <span class="number">0</span>) {</span><br><span class="line">					domDrag.style.marginLeft = <span class="string">'0px'</span></span><br><span class="line">					domset.x = <span class="number">0</span></span><br><span class="line">				} <span class="keyword">else</span> <span class="keyword">if</span> (right &gt;= clientWidth) {</span><br><span class="line">					domDrag.style.marginLeft = (clientWidth - domDrag.clientWidth) + <span class="string">'px'</span></span><br><span class="line">					domset.x = clientWidth - domDrag.clientWidth</span><br><span class="line">				} <span class="keyword">else</span> {</span><br><span class="line">					domDrag.style.marginLeft = left + <span class="string">'px'</span></span><br><span class="line">					domset.x = left</span><br><span class="line">				}</span><br><span class="line">				<span class="keyword">if</span> (top &lt;= <span class="number">0</span>) {</span><br><span class="line">					domDrag.style.marginTop = <span class="string">'0px'</span></span><br><span class="line">					domset.y = <span class="number">0</span></span><br><span class="line">				} <span class="keyword">else</span> <span class="keyword">if</span> (bottom &gt;= clientHeight) {</span><br><span class="line">					domDrag.style.marginTop = (clientHeight - domDrag.clientHeight) + <span class="string">'px'</span></span><br><span class="line">					domset.y = clientHeight - domDrag.clientHeight</span><br><span class="line">				} <span class="keyword">else</span> {</span><br><span class="line">					domDrag.style.marginTop = top + <span class="string">'px'</span></span><br><span class="line">					domset.y = top</span><br><span class="line">				}</span><br><span class="line">				<span class="comment">// 结束拖拽</span></span><br><span class="line">				<span class="built_in">document</span>.removeEventListener(<span class="string">'mousemove'</span>, dia_mousemove)</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	})</span><br><span class="line">}</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> dialogDrag</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.6.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.6.0/dist/mindmap.min.css">
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：利用 vue3 给 element-plus 的 el-dialog 增加拖拽功能</li>
+        <li>本文作者：byxian</li>
+        <li>创建时间：2021-10-16 00:23:00</li>
+        <li>
+            本文链接：https://www.byxian.top/posts/69fe2e47/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/posts/747dba99/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">vue引入外部cdn报错 ‘XXX is not defined’</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script data-pjax>
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: 'j6T49yx0Pt6N1T8Q0OTJDdsw-gzGzoHsz',
+                    appKey: '2cMi1sf8WKuplvXV6KPMl3iE',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '说点什么吧',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'byxian';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('true') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div style="width: 70%;margin: 0 0 0 15%;">
+        <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=VKNemFPMpjTxeK5XF8hdKsyzvPgbTHMIBxj23zFbwmE&cl=ffffff&w=a"></script>
+    </div>
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">byxian</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <!--  <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>  -->
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">鄂ICP备2021008680号</a></div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">变化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">代码</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

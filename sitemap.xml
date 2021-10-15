@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.byxian.top/posts/69fe2e47/</loc>
+    
+    <lastmod>2021-10-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/googlee908532e4819f072.html</loc>
+    
+    <lastmod>2021-10-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.byxian.top/posts/5d59a84c/</loc>
     
     <lastmod>2021-10-01</lastmod>
@@ -67,71 +81,106 @@
 
   <url>
     <loc>https://www.byxian.top/</loc>
-    <lastmod>2021-10-11</lastmod>
+    <lastmod>2021-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://www.byxian.top/tags/layui/</loc>
-    <lastmod>2021-10-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.byxian.top/tags/tree%E7%BB%84%E4%BB%B6/</loc>
-    <lastmod>2021-10-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.byxian.top/tags/%E5%B9%B3%E6%BB%91%E8%BF%87%E6%B8%A1/</loc>
-    <lastmod>2021-10-11</lastmod>
+    <lastmod>2021-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/tags/scrollIntoView/</loc>
-    <lastmod>2021-10-11</lastmod>
+    <lastmod>2021-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/tags/VMware/</loc>
-    <lastmod>2021-10-11</lastmod>
+    <lastmod>2021-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/tags/vue/</loc>
-    <lastmod>2021-10-11</lastmod>
+    <lastmod>2021-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/tags/history/</loc>
-    <lastmod>2021-10-11</lastmod>
+    <lastmod>2021-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/tags/vue3/</loc>
-    <lastmod>2021-10-11</lastmod>
+    <lastmod>2021-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/layui/</loc>
+    <lastmod>2021-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/tree%E7%BB%84%E4%BB%B6/</loc>
+    <lastmod>2021-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/tags/cdn/</loc>
-    <lastmod>2021-10-11</lastmod>
+    <lastmod>2021-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/element-plus/</loc>
+    <lastmod>2021-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/el-dialog/</loc>
+    <lastmod>2021-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/%E5%BC%B9%E7%AA%97/</loc>
+    <lastmod>2021-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/%E6%8B%96%E6%8B%BD/</loc>
+    <lastmod>2021-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/tags/%E5%85%A8%E5%B1%8F/</loc>
+    <lastmod>2021-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -140,14 +189,21 @@
   
   <url>
     <loc>https://www.byxian.top/categories/javascript/</loc>
-    <lastmod>2021-10-11</lastmod>
+    <lastmod>2021-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.byxian.top/categories/vue/</loc>
-    <lastmod>2021-10-11</lastmod>
+    <lastmod>2021-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.byxian.top/categories/vue/element-plus/</loc>
+    <lastmod>2021-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

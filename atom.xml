@@ -6,7 +6,7 @@
   <link href="https://www.byxian.top/atom.xml" rel="self"/>
   
   <link href="https://www.byxian.top/"/>
-  <updated>2021-10-01T14:25:14.121Z</updated>
+  <updated>2021-10-15T16:31:42.558Z</updated>
   <id>https://www.byxian.top/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用 vue3 给 element-plus 的 el-dialog 增加拖拽功能</title>
+    <link href="https://www.byxian.top/posts/69fe2e47/"/>
+    <id>https://www.byxian.top/posts/69fe2e47/</id>
+    <published>2021-10-15T16:23:00.000Z</published>
+    <updated>2021-10-15T16:31:42.558Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text&amp;#x2F;css&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="vue" scheme="https://www.byxian.top/categories/vue/"/>
+    
+    <category term="element-plus" scheme="https://www.byxian.top/categories/vue/element-plus/"/>
+    
+    
+    <category term="vue" scheme="https://www.byxian.top/tags/vue/"/>
+    
+    <category term="element-plus" scheme="https://www.byxian.top/tags/element-plus/"/>
+    
+    <category term="el-dialog" scheme="https://www.byxian.top/tags/el-dialog/"/>
+    
+    <category term="弹窗" scheme="https://www.byxian.top/tags/%E5%BC%B9%E7%AA%97/"/>
+    
+    <category term="拖拽" scheme="https://www.byxian.top/tags/%E6%8B%96%E6%8B%BD/"/>
+    
+    <category term="全屏" scheme="https://www.byxian.top/tags/%E5%85%A8%E5%B1%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>vue引入外部cdn报错 ‘XXX is not defined’</title>
